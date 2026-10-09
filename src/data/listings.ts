@@ -45,7 +45,7 @@ export const listings: Listing[] = [
     district: "Юг-2",
     address: "ул. Ахунбаева",
     specs: ["92 м²", "3 комн.", "7/12 эт."],
-    image: "/img/apt0.png",
+    image: "/img/listings/buy-1.jpg",
   },
   {
     id: "buy-2",
@@ -57,7 +57,7 @@ export const listings: Listing[] = [
     district: "Ала-Арча",
     address: "Бишкек",
     specs: ["240 м²", "5 комн.", "6 сот."],
-    image: "/img/house1.png",
+    image: "/img/listings/buy-2.jpg",
   },
   {
     id: "buy-3",
@@ -69,7 +69,7 @@ export const listings: Listing[] = [
     district: "Джал",
     address: "ул. Раззакова",
     specs: ["64 м²", "2 комн.", "5/9 эт."],
-    image: "/img/apt2.png",
+    image: "/img/listings/buy-3.jpg",
   },
   {
     id: "buy-4",
@@ -81,7 +81,7 @@ export const listings: Listing[] = [
     district: "Центр",
     address: "пр. Чуй",
     specs: ["120 м²", "витрины", "отд. вход"],
-    image: "/img/commercial3.png",
+    image: "/img/listings/buy-4.jpg",
   },
   {
     id: "buy-5",
@@ -92,7 +92,7 @@ export const listings: Listing[] = [
     price: 185_000,
     district: "Асанбай",
     specs: ["150 м²", "4 комн.", "гараж"],
-    image: "/img/house4.png",
+    image: "/img/listings/buy-5.jpg",
   },
   {
     id: "buy-6",
@@ -103,7 +103,7 @@ export const listings: Listing[] = [
     price: 62_000,
     district: "7 мкр",
     specs: ["42 м²", "1 комн.", "3/9 эт."],
-    image: "/img/apt5.png",
+    image: "/img/listings/buy-6.jpg",
   },
   {
     id: "rent-1",
@@ -114,7 +114,7 @@ export const listings: Listing[] = [
     price: 650,
     district: "Магистраль",
     specs: ["58 м²", "с мебелью"],
-    image: "/img/apt0.png",
+    image: "/img/listings/rent-1.jpg",
   },
   {
     id: "rent-2",
@@ -125,7 +125,7 @@ export const listings: Listing[] = [
     price: 1_800,
     district: "Ала-Арча",
     specs: ["200 м²", "сад", "камин"],
-    image: "/img/house1.png",
+    image: "/img/listings/rent-2.jpg",
   },
   {
     id: "rent-3",
@@ -136,7 +136,7 @@ export const listings: Listing[] = [
     price: 1_200,
     district: "Центр",
     specs: ["85 м²", "open space"],
-    image: "/img/commercial2.png",
+    image: "/img/listings/rent-3.jpg",
   },
   {
     id: "rent-4",
@@ -147,7 +147,7 @@ export const listings: Listing[] = [
     price: 420,
     district: "Джал",
     specs: ["40 м²", "евроремонт"],
-    image: "/img/apt3.png",
+    image: "/img/listings/rent-4.jpg",
   },
   {
     id: "rent-5",
@@ -158,7 +158,7 @@ export const listings: Listing[] = [
     price: 900,
     district: "Юг-2",
     specs: ["85 м²", "новый дом"],
-    image: "/img/apt4.png",
+    image: "/img/listings/rent-5.jpg",
   },
   {
     id: "rent-6",
@@ -169,7 +169,7 @@ export const listings: Listing[] = [
     price: 1_500,
     district: "Асанбай",
     specs: ["70 м²", "первая линия"],
-    image: "/img/commercial5.png",
+    image: "/img/listings/rent-6.jpg",
   },
 ];
 

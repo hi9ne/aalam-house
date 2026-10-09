@@ -39,16 +39,16 @@ export const services = [
 ];
 
 export const districtCards = [
-  { name: "Джал", text: "от $1 300 за м²", image: "/img/d0.png" },
-  { name: "Юг-2", text: "от $1 100 за м²", image: "/img/d1.png" },
-  { name: "Асанбай", text: "от $1 000 за м²", image: "/img/d2.png" },
-  { name: "Ала-Арча", text: "дома от $180 000", image: "/img/d3.png" },
+  { name: "Джал", text: "от $1 300 за м²", image: "/img/districts/jal.jpg" },
+  { name: "Юг-2", text: "от $1 100 за м²", image: "/img/districts/yug-2.jpg" },
+  { name: "Асанбай", text: "от $1 000 за м²", image: "/img/districts/asanbay.jpg" },
+  { name: "Ала-Арча", text: "дома от $180 000", image: "/img/districts/ala-archa.jpg" },
 ];
 
 export const about = {
   title: "ААЛАМ House — агентство недвижимости в Бишкеке",
   text: "Помогаем покупать, продавать и арендовать недвижимость в Бишкеке. Знаем рынок города, проверяем документы и ведём клиента на каждом этапе сделки.",
-  image: "/img/office.png",
+  image: "/img/office.jpg",
   perks: [
     "Проверка документов",
     "Фиксированная комиссия",

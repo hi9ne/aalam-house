@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Logo } from "@/components/Logo";
 import { navigation, site } from "@/data/site";
 
 export function Header() {
@@ -9,15 +10,7 @@ export function Header() {
   return (
     <header className="relative z-20">
       <div className="flex items-center justify-between gap-4 rounded-full bg-white/70 py-2.5 pr-3 pl-6 backdrop-blur-[14px]">
-        <a
-          href="#top"
-          className="flex items-center gap-2.5 text-[20px] font-bold hover:text-accent"
-        >
-          <span className="grid size-[34px] place-items-center rounded-full bg-ink text-[15px] text-white">
-            A
-          </span>
-          {site.name}
-        </a>
+        <Logo href="#top" />
 
         <nav
           aria-label="Основная навигация"
