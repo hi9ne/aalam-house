@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Токены макета: редизайн начинается с правки этих значений. */
+@theme {
+  --color-ink: #1d1a3d;
+  --color-ink-soft: #3a3760;
+  --color-body: #4a4772;
+  --color-muted: #5a5780;
+  --color-subtle: #6b6890;
+  --color-faint: #8c88bd;
+  --color-line: #cfcce3;
+  --color-line-soft: #dcdaea;
+  --color-page: #eceaf5;
+  --color-surface: #f7f6fc;
+  --color-placeholder: #dcdaf0;
+  --color-accent: #e0764a;
+  --color-accent-soft: #f2a583;
+  --color-on-dark: #c9c6e8;
+  --color-on-dark-strong: #e3e1f5;
+
+  --radius-card: 28px;
+  --radius-panel: 40px;
+}
+
+@layer base {
+  html {
+    line-height: normal;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--color-page);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  button,
+  select,
+  input[type="range"] {
+    cursor: pointer;
+  }
+}
