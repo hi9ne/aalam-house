@@ -8,6 +8,8 @@ type SiteConfig = {
   address: string;
   hours: string;
   copyrightYear: number;
+  /** Пока false, сайт просит поисковики его не индексировать. */
+  indexable: boolean;
 };
 
 export const site: SiteConfig = {
@@ -20,6 +22,8 @@ export const site: SiteConfig = {
   address: "г. Бишкек, ул. Киевская, 77, офис 5",
   hours: "Ежедневно, 09:00–19:00",
   copyrightYear: 2026,
+  // На сайте заглушки (отзывы, цифры, контакты). Включить после замены на настоящие данные.
+  indexable: false,
 };
 
 export const navigation = [

@@ -14,6 +14,7 @@ const title = `${site.name} — недвижимость в Бишкеке`;
 export const metadata: Metadata = {
   title: { default: title, template: `%s — ${site.name}` },
   description: hero.lead,
+  robots: site.indexable ? undefined : { index: false, follow: false },
   openGraph: {
     title,
     description: hero.lead,
