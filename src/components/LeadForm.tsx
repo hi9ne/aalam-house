@@ -1,8 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { submitLead, type LeadFormState } from "@/app/actions";
+import { listings } from "@/data/listings";
 import { leadIntents } from "@/data/site";
+import { useFavoriteIds } from "@/lib/favorites";
+import { pluralize } from "@/lib/format";
 
 const initialState: LeadFormState = { status: "idle" };
 
@@ -12,6 +16,11 @@ const fieldClass =
 export function LeadForm() {
   const [state, formAction, pending] = useActionState(submitLead, initialState);
   const sent = state.status === "success";
+
+  const favoriteIds = useFavoriteIds();
+  const favorites = listings.filter((listing) =>
+    favoriteIds.includes(listing.id),
+  );
 
   return (
     <form
@@ -86,6 +95,21 @@ export function LeadForm() {
         className="hidden"
       />
 
+      {favorites.map((listing) => (
+        <input
+          key={listing.id}
+          type="hidden"
+          name="favorites"
+          value={listing.id}
+        />
+      ))}
+      {favorites.length > 0 && (
+        <p className="px-1 text-[13px] text-on-dark">
+          К заявке приложим ваше избранное: {favorites.length}{" "}
+          {pluralize(favorites.length, ["объект", "объекта", "объектов"])}.
+        </p>
+      )}
+
       <button
         type="submit"
         disabled={pending}
@@ -106,7 +130,11 @@ export function LeadForm() {
       </p>
 
       <span className="text-[12px] text-faint">
-        Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+        Нажимая кнопку, вы соглашаетесь на{" "}
+        <Link href="/privacy" className="underline underline-offset-2">
+          обработку персональных данных
+        </Link>
+        .
       </span>
     </form>
   );

@@ -12,7 +12,7 @@ const onest = Onest({
 const title = `${site.name} — недвижимость в Бишкеке`;
 
 export const metadata: Metadata = {
-  title,
+  title: { default: title, template: `%s — ${site.name}` },
   description: hero.lead,
   openGraph: {
     title,

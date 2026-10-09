@@ -1,5 +1,6 @@
 "use server";
 
+import { formatPrice, listings } from "@/data/listings";
 import { leadIntents, site } from "@/data/site";
 
 export type LeadFormState = {
@@ -49,13 +50,28 @@ export async function submitLead(
     return { status: "error", message: sendFailedMessage, values };
   }
 
-  const text = [
+  // Из формы приходят только ID, названия и цены берутся из своих данных.
+  const favoriteIds = new Set(formData.getAll("favorites").map(String));
+  const favorites = listings.filter((listing) => favoriteIds.has(listing.id));
+
+  const lines = [
     `Новая заявка с сайта ${site.name}`,
     "",
     `Имя: ${name}`,
     `Телефон: ${phone}`,
     `Запрос: ${intent}`,
-  ].join("\n");
+  ];
+  if (favorites.length > 0) {
+    lines.push(
+      "",
+      "Избранное:",
+      ...favorites.map(
+        (listing) =>
+          `• ${listing.title}, ${listing.district} — ${formatPrice(listing.price, listing.deal)}`,
+      ),
+    );
+  }
+  const text = lines.join("\n");
 
   try {
     const response = await fetch(

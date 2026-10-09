@@ -10,7 +10,7 @@ export function Hero() {
       className="relative flex min-h-[760px] flex-col gap-6 overflow-hidden rounded-panel bg-linear-to-b from-[#9fb4e3] via-[#c9c3e6] via-55% to-[#f0d9d0] px-4 pt-4 pb-5 sm:px-7 sm:pt-5 sm:pb-7"
     >
       <Image
-        src="/img/hero.png"
+        src="/img/hero.jpg"
         alt=""
         fill
         sizes="(min-width: 1280px) 1240px, 100vw"

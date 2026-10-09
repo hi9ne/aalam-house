@@ -8,6 +8,8 @@ export type CatalogFilter = {
   type: PropertyType | null;
   district: string | null;
   budget: number | null;
+  /** Витрина показывает только избранное, остальные условия не применяются. */
+  favoritesOnly: boolean;
 };
 
 type CatalogFilterContextValue = {
@@ -16,6 +18,7 @@ type CatalogFilterContextValue = {
   setType: (type: PropertyType | null) => void;
   setDistrict: (district: string | null) => void;
   setBudget: (budget: number | null) => void;
+  showFavorites: () => void;
   reset: () => void;
 };
 
@@ -28,19 +31,25 @@ const initialFilter: CatalogFilter = {
   type: null,
   district: null,
   budget: null,
+  favoritesOnly: false,
 };
 
 /** Общее состояние поиска в hero и витрины каталога. */
 export function CatalogFilterProvider({ children }: { children: ReactNode }) {
   const [filter, setFilter] = useState(initialFilter);
 
+  // Любое изменение поиска возвращает витрину из режима «Избранное».
+  const search = (patch: Partial<CatalogFilter>) =>
+    setFilter((f) => ({ ...f, ...patch, favoritesOnly: false }));
+
   const value: CatalogFilterContextValue = {
     filter,
     // Шкала бюджета у покупки и аренды разная, поэтому бюджет сбрасывается.
-    setDeal: (deal) => setFilter((f) => ({ ...f, deal, budget: null })),
-    setType: (type) => setFilter((f) => ({ ...f, type })),
-    setDistrict: (district) => setFilter((f) => ({ ...f, district })),
-    setBudget: (budget) => setFilter((f) => ({ ...f, budget })),
+    setDeal: (deal) => search({ deal, budget: null }),
+    setType: (type) => search({ type }),
+    setDistrict: (district) => search({ district }),
+    setBudget: (budget) => search({ budget }),
+    showFavorites: () => setFilter((f) => ({ ...f, favoritesOnly: true })),
     reset: () => setFilter((f) => ({ ...initialFilter, deal: f.deal })),
   };
 
